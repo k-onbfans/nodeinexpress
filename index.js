@@ -13,5 +13,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(8001, () => {
-  console.log('示例程序正在监听 8001 端口！')
+  console.log('Listening 8001 port!')
 });
