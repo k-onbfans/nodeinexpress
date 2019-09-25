@@ -19,7 +19,7 @@ router.post('/',(req,res) => {
             list.splice(num,1);
         }
     }
-    res.send(list[0])
+    res.json({"lastElement" : list[0]})
 })
 
 module.exports = router;
