@@ -1,20 +1,17 @@
 const request = require('request-promise-native')
 
-var response = 'a';
-
-function CallToBackEnd(req,url,method){
-
+function CallToBackEnd(req,res){
     var options = {
-        method:method,
-        uri:url,
+        method:'POST',
+        uri:'http://localhost:8081/findbyroute',
         body:req.body,
         json:true
     }
-    request(options).then(function(res) {
-        console.log(res);
-        return res;
+    request(options).then(function(response){
+        res.json(response);
+        console.log(response)
     }).catch(function(err){
-        console.log(err)
+        console.log(err);
     })
 }
 
